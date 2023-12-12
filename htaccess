@@ -1,3 +1,8 @@
+# BEGIN Force SSL Redirect
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+# END Force SSL Redirect
 # BEGIN Expiry Headers
 <IfModule mod_expires.c>
   ExpiresActive On
